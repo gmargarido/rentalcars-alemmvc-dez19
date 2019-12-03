@@ -5,7 +5,13 @@ class RentalPresenter < SimpleDelegator
 
   def status
     if scheduled?
-      '<span class="badge badge-primary">agendada</span>'
+      'agendada'
+    elsif in_review?
+      '<span class="badge badge-primary">em revisão</span>'
+    elsif ongoing?
+      '<span class="badge badge-primary">em andamento</span>'
+    elsif finalized?
+      'finalizada'
     end
   end
 end

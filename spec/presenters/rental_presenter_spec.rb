@@ -7,7 +7,7 @@ describe RentalPresenter do
 
       result = RentalPresenter.new(rental).status
 
-      expect(result).to eq('<span class="badge badge-primary">agendada</span>')
+      expect(result).to eq('agendada')
     end
   end
 end
