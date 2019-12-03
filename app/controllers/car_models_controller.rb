@@ -6,7 +6,7 @@ class CarModelsController < ApplicationController
   end
 
   def show
-    @car_model = CarModel.find(params[:id])
+    @car_model = CarModelPresenter.new(CarModel.find(params[:id]).decorate)
   end
 
   def new
@@ -50,5 +50,4 @@ class CarModelsController < ApplicationController
     params.require(:car_model).permit(%i[name year manufacture_id motorization
     fuel_type_id category_id car_options photo])
   end
-
 end
