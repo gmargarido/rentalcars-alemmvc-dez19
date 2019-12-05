@@ -42,7 +42,7 @@ feature 'User schedules rental' do
     expect(page).to have_css('p', text: '07 de janeiro de 3000')
     expect(page).to have_css('p', text: 'Almeida Motors')
     expect(page).to have_css('p', text: 'Categoria: A')
-    expect(page).to have_css('p', text: 'R$ 150,00')
+    expect(page).to have_css('p', text: 'R$ 200,00')
   end
 
   scenario 'and must fill all fields' do
@@ -165,6 +165,6 @@ feature 'User schedules rental' do
     find(:css, '#inputGroupSelect02').set('A')
     click_on 'Agendar'
 
-    expect(page).to have_content('Valor estimado não pode ser zero')
+    expect(page).to have_css('p', text: 'R$ 50,00')
   end
 end
